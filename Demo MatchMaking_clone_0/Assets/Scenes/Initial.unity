@@ -167,9 +167,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6278fb5dbac50454f9d3fb5378a516ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Email: testemail3@gmail.com
-  Password: Daksh123/
+  BuildID: 4db98e56-4573-4ac5-bccc-45dce67efaba
+  EntityId: 
+  SessionTicket: 
+  EntityToken: 
+  Email: testemail@gmail.com
+  Password: Daksh123
   Username: 
+  PlayerXP: 0
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -482,6 +487,8 @@ MonoBehaviour:
   evaluationMethod: 0
   evaluationInterval: 3
   timeInterpolationGui: 0
+  MaxConnections: 100
+  Port: 7777
 --- !u!114 &1820672099
 MonoBehaviour:
   m_ObjectHideFlags: 0

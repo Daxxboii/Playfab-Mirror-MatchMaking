@@ -15,7 +15,7 @@ using PlayFab.Networking;
 public class PlayFabManager : MonoBehaviour
 {
     public static PlayFabManager instance; //Singleton
-
+    public string BuildID;
 
     [Foldout("Player Details", true)]
     [SerializeField] private string EntityId, SessionTicket, EntityToken;
@@ -104,6 +104,7 @@ public class PlayFabManager : MonoBehaviour
     [ButtonMethod]
     public void StartMatchMaking()
     {
+        var _PlayerXP = PlayerXP.ToString();
         var createMatchmakingTicketRequest = new CreateMatchmakingTicketRequest
         {
             Creator = new MatchmakingPlayer
@@ -117,7 +118,7 @@ public class PlayFabManager : MonoBehaviour
                 {
                     DataObject = new
                     {
-                        Skill = PlayerXP
+                        Skill = _PlayerXP
                     }
                 }
             },
@@ -181,7 +182,7 @@ public class PlayFabManager : MonoBehaviour
     {
         RequestMultiplayerServerRequest requestData = new RequestMultiplayerServerRequest
         {
-            BuildId = "313c3c2e-10e2-431e-b4b2-a6a52800fa5b",
+            BuildId = BuildID,
             SessionId = SessionId,
             PreferredRegions = new List<string> { "NorthEurope" }
         };
@@ -259,3 +260,6 @@ public class PlayFabManager : MonoBehaviour
 
     #endregion
 }
+
+
+
